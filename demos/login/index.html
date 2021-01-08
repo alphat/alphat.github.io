@@ -1,26 +1,93 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
-  <title>Dashboard Template for Bootstrap</title>
-  <style>
-    *{padding: 0;margin: 0;-webkit-tap-highlight-color:transparent;outline: none;}
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+    <title>Dashboard Template for Bootstrap</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
+      }
+      html,
+      body {
+        height: 100%;
+      }
 
-    #wrapper{width: 450px;margin-left: auto; margin-right: auto;background-color: #445;box-shadow: 0 0 5px 1px #445;}
-    #login-form{width:80%;margin-left: auto;margin-right: auto; padding-top:100px;}
-    .form-item{width: 100%;position: relative;margin-bottom: 30px;}
-    .form-item:after{content: ""; position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to right, #b09af5, #50bbff);
-                     width:0;height: 1px;pointer-events: none;border-radius: 5px;transition: all 0.15s;}
-    .form-item.focus:after{width:100%;}
-    .form-item input{border: none;width: 100%; background: none;  line-height: 35px; color: #fff;font-size: 14px;
-                     border-bottom:1px solid #666;display: none;font-family: Verdana, Geneva, Tahoma, sans-serif;border-radius: 0;}
-    .form-item span{color: #888; position: absolute;top: 10px;left:0;pointer-events: none;transition: all 0.2s;font-size: 14px;}
-    .form-item span i{font-style: normal;}
-    .form-item.focus span, .complete span{top: -20px;font-size: 16px;color: #bbb;}
-    .form-item.focus span i, .complete span i{display: none;}
-    /* #example-1 {
+      #wrapper {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #445;
+        box-shadow: 0 0 5px 1px #445;
+      }
+      #login-form {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .form-item {
+        width: 100%;
+        position: relative;
+        margin-bottom: 30px;
+      }
+      .form-item:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to right, #b09af5, #50bbff);
+        width: 0;
+        height: 1px;
+        pointer-events: none;
+        border-radius: 5px;
+        transition: all 0.15s;
+      }
+      .form-item.focus:after {
+        width: 100%;
+      }
+      .form-item input {
+        border: none;
+        width: 100%;
+        background: none;
+        line-height: 35px;
+        color: #fff;
+        font-size: 14px;
+        border-bottom: 1px solid #666;
+        display: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-radius: 0;
+      }
+      .form-item span {
+        color: #888;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        pointer-events: none;
+        transition: all 0.2s;
+        font-size: 14px;
+      }
+      .form-item span i {
+        font-style: normal;
+      }
+      .form-item.focus span,
+      .complete span {
+        top: -20px;
+        font-size: 16px;
+        color: #bbb;
+      }
+      .form-item.focus span i,
+      .complete span i {
+        display: none;
+      }
+      /* #example-1 {
         transition: all .3s;
         -webkit-filter: grayscale(100%);
         opacity: 0.5;
@@ -37,41 +104,47 @@
         -webkit-filter: grayscale(0%);
         opacity: 1;
     } */
-    input:-webkit-autofill { 
-    -webkit-animation-name: autofill;  -webkit-animation-fill-mode: both;
-}
-@-webkit-keyframes autofill {  
-    to {    color: #fff;    background: transparent;  }
-}
-</style>
-</head>
+      input:-webkit-autofill {
+        -webkit-animation-name: autofill;
+        -webkit-animation-fill-mode: both;
+      }
+      @-webkit-keyframes autofill {
+        to {
+          color: #fff;
+          background: transparent;
+        }
+      }
+    </style>
+  </head>
 
-<body>
-  <div id="wrapper">
-    <div id="login-form">
-      <div class="form-item">
-        <input type="text" placeholder="用户名" />
-      </div>
-      <div class="form-item">
-        <input type="password" placeholder="密码" />
+  <body>
+    <div id="wrapper">
+      <div id="login-form">
+        <div class="form-item">
+          <input type="text" placeholder="用户名" />
+        </div>
+        <div class="form-item">
+          <input type="password" placeholder="密码" autocomplete="off" />
+        </div>
       </div>
     </div>
-  </div>
-  <script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    $('.form-item input').focus(function(){
-      $(this).parent().addClass('focus');
-    })
-    $('.form-item input').blur(function(){
-      var $p = $(this).parent();
-      $p.removeClass('focus');
-      this.value ? $p.addClass('complete') : $p.removeClass('complete')
-    })
-    $('.form-item input').each(function(){
-      var ptxt = $(this).attr('placeholder');
-      $(this).attr('placeholder','').show();
-      $(this).parent().append('<span><i>请输入</i>'+ptxt+'</span>')
-    })
-  </script>
-</body>
+    <script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $('.form-item input').focus(function () {
+        $(this).parent().addClass('focus');
+      });
+      $('.form-item input').blur(function () {
+        var $p = $(this).parent();
+        $p.removeClass('focus');
+        this.value ? $p.addClass('complete') : $p.removeClass('complete');
+      });
+      $('.form-item input').each(function () {
+        var ptxt = $(this).attr('placeholder');
+        $(this).attr('placeholder', '').show();
+        $(this)
+          .parent()
+          .append('<span><i>请输入</i>' + ptxt + '</span>');
+      });
+    </script>
+  </body>
 </html>
