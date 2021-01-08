@@ -121,10 +121,17 @@
     <div id="wrapper">
       <div id="login-form">
         <div class="form-item">
-          <input type="text" placeholder="用户名" autocomplete="new-password" />
+          <input type="text" placeholder="用户名" />
         </div>
         <div class="form-item">
-          <input type="password" placeholder="密码" autocomplete="new-password" />
+          <input
+            type="password"
+            placeholder="密码"
+            readonly
+            οnfοcus="this.removeAttribute('readonly')"
+            value=""
+            autocomplete="off"
+          />
         </div>
       </div>
     </div>
