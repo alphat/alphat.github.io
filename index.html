@@ -1,145 +1,352 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Alpha Tang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta
+      name="description"
+      content="Hi，我叫唐伟俊（Alpha），是一名网站开发工程师。主要研究前端界面开发技术及用户体验设计。同时拥有手机APP（RN \ 小程序）、网站后台（PHP \ MySQL）等相关开发经验。"
+    />
+    <meta name="keywords" content="alpha.tang，唐伟俊，网站设计，网站开发，用户体验" />
+    <meta name="author" content="alpha.tang" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Alpha Tang</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="description" content="PRO Card - Material Resume / CV / vCard Template" />
-  <meta name="keywords" content="vcard, resposnive, retina, resume, jquery, css3, bootstrap, Material CV, portfolio" />
-  <meta name="author" content="lmtheme" />
+    <link rel="shortcut icon" href="images/fav.ico" />
 
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="css/normalize.css" type="text/css">
-  <link rel="stylesheet" href="css/animate.css" type="text/css">
-  <link rel="stylesheet" href="css/transition-animations.css" type="text/css">
-  <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-  <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-  <link rel="stylesheet" href="css/main-green.css" type="text/css">
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #f5f5f5;
+        color: #333;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      :root {
+        box-sizing: border-box;
+      }
+      *,
+      ::before,
+      ::after {
+        box-sizing: inherit;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      img {
+        vertical-align: bottom;
+        max-width: 100%;
+        height: auto;
+        border: 0;
+        -ms-interpolation-mode: bicubic;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      h1,
+      h2 {
+        font-size: 50px;
+        line-height: 1;
+        color: #fff;
+        margin: 0;
+      }
+      h2 {
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-weight: normal;
+      }
+      h3 {
+        line-height: 1;
+        color: #666;
+        margin: 0;
+      }
+      main {
+        position: relative;
+        z-index: 10;
+        max-width: 800px;
+        margin: 5%;
+        background-color: #fff;
+        border-radius: 10px;
+        -webkit-box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.1);
+      }
+      .top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 7%;
+        padding-right: 0;
+        background-color: #2eca7f;
+      }
+      .top .avatar {
+        width: 35%;
+        height: 100%;
+        background-color: #f0f0f0;
+        border: 5px solid #fff;
+        border-radius: 10px;
+      }
+      .top .info {
+        width: 65%;
+        text-align: center;
+      }
+      .social-links a {
+        background-color: #fff;
+        display: inline-block;
+        margin: 0 3px;
+        padding: 8px;
+        border-radius: 50%;
+      }
+      .social-links a img {
+        width: 24px;
+        height: 24px;
+      }
+      .bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 15px;
+        padding: 5%;
+        padding-left: 7%;
+      }
+      .about-me {
+        width: 55%;
+        line-height: 1.5;
+      }
+      .about-me b {
+        font-weight: normal;
+        color: #2eca7f;
+      }
+      .info-list {
+        margin: 1em;
+        margin-left: 7%;
+        width: 38%;
+      }
+      .info-list li {
+        margin-bottom: 5px;
+      }
+      .info-list li label {
+        display: inline-block;
+        width: 35%;
+      }
 
-  <link rel="shortcut icon" href="images/fav.ico">
+      .bg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .bg .light {
+        width: 0;
+        height: 0;
+        border: 70px solid transparent;
+        border-bottom: 120vw solid rgba(255, 255, 255, 0.4);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
 
-  <style>
-    @media (min-width: 768px){
-      body{display: flex; justify-content:center; align-items:Center;}
-      .start-page-content .page-header .title-block h1{margin-top: 5px;}
-    }
-    .pt-page{padding-top: 15px; padding-bottom: 15px; max-width: 780px;}
-    .info-list li a{text-decoration: underline;}
-    /* .section-body{ width:980px; margin-left: auto; margin-right: auto;background-color: #fff; border-radius: 10px; overflow: hidden;} */
-    .social-links a{line-height: 36px;}
-    .social-links a img{vertical-align: baseline; margin-top: 6px;width: 24px;}
-    .start-page-content .page-header .photo{background-color: #f0f0f0;margin-bottom: 0;border-radius: 8px;}
-    /* .about-me p{margin-bottom: 5px;font-size: 14px; line-height: 20px;} */
-    .start-page-content .about-me .block-title h3{margin-top: 1px; color:#555}
-    .start-page-content .about-me p b { color: #2c7; font-weight: normal; }
-  </style>
+      .top .bg .light {
+        border: 120px solid transparent;
+        border-bottom: 120vw solid rgba(255, 255, 255, 0.08);
+      }
+      #light-1 {
+        margin-left: -10vw;
+        margin-top: -60vw;
+        transform: rotate(105deg);
+      }
+      #light-2 {
+        margin-left: -10vw;
+        margin-top: -60vw;
+        transform: rotate(250deg);
+      }
+      #light-3 {
+        margin-left: -10vw;
+        margin-top: -60vw;
+        transform: rotate(50deg);
+      }
 
-</head>
+      #light-4 {
+        margin-left: -25vw;
+        margin-top: -75vw;
+        transform: rotate(105deg);
+      }
+      #light-5 {
+        margin-left: 25vw;
+        margin-top: -90vw;
+        transform: rotate(225deg);
+      }
+      #light-6 {
+        margin-left: 20vw;
+        margin-top: -55vw;
+        transform: rotate(-50deg);
+      }
 
-<body class="material-template">
-  <section class="section-body pt-page">
-    <div class="section-inner start-page-content">
-      <div class="page-header">
-        <div class="row">
-          <div class="col-sm-5 col-md-5 col-lg-5">
-            <div class="photo">
-              <img src="images/alphatang.png" alt="">
-            </div>
-          </div>
-
-          <div class="col-sm-7 col-md-7 col-lg-7">
-            <div class="title-block">
-              <h1>Alpha Tang</h1>
-              <div class="owl-carousel text-rotation">
-                <div class="item">
-                  <div class="sp-subtitle">Web Developer</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="social-links">
-              <a href="javascript:;" title="HTML5">
-                <img src="images/skill/html5.svg" alt='HTML5'>
-              </a>
-              <a href="javascript:;" title="jQuery">
-                <img src="images/skill/jquery.svg" alt='jQuery'>
-              </a>
-              <a href="javascript:;" title="Facebook React">
-                <img src="images/skill/react.svg" alt='Facebook React'>
-              </a>
-              <a href="javascript:;" title="Vue">
-                <img src="images/skill/vue.svg" alt='Vue'>
-              </a>
-              <a href="javascript:;" title="Scss">
-                <img src="images/skill/scss.svg" alt='Scss'>
-              </a>
-              <br />
-              <a href="javascript:;" title="Webpack">
-                <img src="images/skill/webpack.svg" alt='Webpack'>
-              </a>
-              <a href="javascript:;" title="Git">
-                <img src="images/skill/git.svg" alt='Git'>
-              </a>
-              <a href="javascript:;" title="Visual Studio Code">
-                <img src="images/skill/vscode.svg" alt='Visual Studio Code'>
-              </a>
-              <a href="javascript:;" title="Google Chrome">
-                <img src="images/skill/chrome.svg" alt='chrome'>
-              </a>
-              <br />
-              <a href="javascript:;" title="Microsoft Windows">
-                <img src="images/skill/windows.svg" alt='Windows'>
-              </a>
-              <a href="javascript:;" title="Apple iOS">
-                <img src="images/skill/ios.svg" alt='Apple iOS'>
-              </a>
-              <a href="javascript:;" title="Google Android">
-                <img src="images/skill/android.svg" alt='Google Android'>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="page-content">
-        <div class="row">
-
-          <div class="col-sm-7 col-md-7 col-lg-7">
-            <div class="about-me">
-              <div class="block-title">
-                <h3>个人简介</h3>
-              </div>
-              <p>Hi，我叫唐伟俊（Alpha），是一名网站开发工程师。<br />
-                 主要研究<b>前端界面开发技术</b>及<b>用户体验设计</b>。同时拥有<br />
-                 <b>手机APP</b>（RN \ 小程序）、<b>网站后台</b>（PHP \ MySQL）<br />等相关开发经验。</p>
-            </div>
-          </div>
-
-          <div class="col-sm-5 col-md-5 col-lg-5">
-            <ul class="info-list">
-              <li>
-                <span class="title">居住地</span>
-                <span class="value">上海浦东</span>
-              </li>
-              <li>
-                <span class="title">从业年限</span>
-                <span class="value">2005年至今</span>
-              </li>
-              <li>
-                <span class="title">联系方式</span>
-                <a class="value" href="mailto:alphat@qq.com">alphat@qq.com</a>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
+      @media (max-width: 639px) {
+        body {
+          align-items: unset;
+          height: auto;
+        }
+        main {
+          margin: 3%;
+        }
+        h1 {
+          font-size: 10vw;
+        }
+        h2 {
+          font-size: 5vw;
+          margin-top: 3vw;
+          margin-bottom: 8vw;
+        }
+        .top {
+          flex-direction: column;
+          padding: 7% 0;
+        }
+        .top .avatar {
+          width: 40%;
+          margin-bottom: 7%;
+        }
+        .top .info {
+          width: 100%;
+        }
+        .bottom {
+          flex-direction: column;
+          padding: 7%;
+        }
+        .about-me {
+          width: 100%;
+        }
+        .info-list {
+          width: 100%;
+          margin: 0;
+        }
+        .info-list li label {
+          width: 50%;
+        }
+        .top .bg .light {
+          border: 50px solid transparent;
+          border-bottom: 120vw solid rgba(255, 255, 255, 0.08);
+        }
+        #light-4 {
+          margin-left: -20vw;
+          margin-top: -75vw;
+          transform: rotate(105deg);
+        }
+        #light-5 {
+          margin-left: 0vw;
+          margin-top: -80vw;
+          transform: rotate(225deg);
+        }
+        #light-6 {
+          margin-left: 5vw;
+          margin-top: -85vw;
+          transform: rotate(-45deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+      <div id="light-1" class="light"></div>
+      <div id="light-2" class="light"></div>
+      <div id="light-3" class="light"></div>
     </div>
-  </section>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123784264-1"></script>
-  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-123784264-1');</script>
-</body>
+    <main>
+      <section class="top">
+        <div class="avatar" style="position: relative; z-index: 3">
+          <img src="./images/alphatang.png" alt="" />
+        </div>
+        <div class="info" style="position: relative; z-index: 3">
+          <h1>Alpha Tang</h1>
+          <h2>Web Developer</h2>
+          <div class="social-links">
+            <a href="javascript:;" title="HTML5">
+              <img src="images/skill/html5.svg" alt="HTML5" />
+            </a>
+            <a href="javascript:;" title="jQuery">
+              <img src="images/skill/jquery.svg" alt="jQuery" />
+            </a>
+            <a href="javascript:;" title="Facebook React">
+              <img src="images/skill/react.svg" alt="Facebook React" />
+            </a>
+            <a href="javascript:;" title="Vue">
+              <img src="images/skill/vue.svg" alt="Vue" />
+            </a>
+            <a href="javascript:;" title="Scss">
+              <img src="images/skill/scss.svg" alt="Scss" />
+            </a>
+            <br />
+            <a href="javascript:;" title="Webpack">
+              <img src="images/skill/webpack.svg" alt="Webpack" />
+            </a>
+            <a href="javascript:;" title="Git">
+              <img src="images/skill/git.svg" alt="Git" />
+            </a>
+            <a href="javascript:;" title="Visual Studio Code">
+              <img src="images/skill/vscode.svg" alt="Visual Studio Code" />
+            </a>
+            <a href="javascript:;" title="Google Chrome">
+              <img src="images/skill/chrome.svg" alt="chrome" />
+            </a>
+            <br />
+            <a href="javascript:;" title="Microsoft Windows">
+              <img src="images/skill/windows.svg" alt="Windows" />
+            </a>
+            <a href="javascript:;" title="Apple iOS">
+              <img src="images/skill/ios.svg" alt="Apple iOS" />
+            </a>
+            <a href="javascript:;" title="Google Android">
+              <img src="images/skill/android.svg" alt="Google Android" />
+            </a>
+          </div>
+        </div>
+        <div class="bg">
+          <div id="light-4" class="light"></div>
+          <div id="light-5" class="light"></div>
+          <div id="light-6" class="light"></div>
+        </div>
+      </section>
+      <section class="bottom">
+        <div class="about-me">
+          <h3>个人简介</h3>
+          <p>
+            Hi，我叫唐伟俊（Alpha）是一名网站开发工程师。主要研究<b>前端界面开发技术</b>及<b>用户体验设计</b>。
+            同时拥有<b>手机APP</b>（RN \ 小程序）、<b>网站后台</b>（PHP \ MySQL）等相关开发经验。
+          </p>
+        </div>
+        <div class="info-list">
+          <h3>&nbsp;</h3>
+          <ul>
+            <li><label>居住地</label><span>上海浦东</span></li>
+            <li><label>从业年限</label><span>2005年至今</span></li>
+            <li><label>联系方式</label><span>alphat@qq.com</span></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123784264-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-123784264-1');
+    </script>
+  </body>
 </html>
