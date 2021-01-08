@@ -128,7 +128,8 @@
             type="password"
             placeholder="密码"
             readonly
-            onfocus="setTimeout(()=>{this.removeAttribute('readonly')},1000)"
+            onfocus="setTimeout(()=>{this.removeAttribute('readonly')},100)"
+            onblur="this.setAttribute('readonly','readonly')"
             autocomplete="off"
           />
         </div>
